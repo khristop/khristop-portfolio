@@ -1,0 +1,21 @@
+.icon {
+    content: ' ';
+    display: inline-block;
+    &__large {
+        width: 48px;
+        height: 48px;
+        color: inherit;
+    }
+
+    &-linkedin {
+        @extend .icon__large;
+        -webkit-mask-image: url('/img/linkedin.svg');
+        mask-image: url('/img/linkedin.svg');
+    }
+
+    &-github {
+        @extend .icon__large;
+        -webkit-mask-image: url('/img/github.svg');
+        mask-image: url('/img/github.svg');
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-kevin",
+  "version": "0.0.0",
+  "description": "Portfolio Kevin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass sass/pages/ -o styles/ -w sass/"
+  },
+  "author": "khristop",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0",
+    "sass": "^1.63.6"
+  }
+}
