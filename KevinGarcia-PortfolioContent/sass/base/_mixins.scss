@@ -1,0 +1,10 @@
+@mixin grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@mixin col($columns) {
+    flex: 0 0 (100% / 12) * $columns;
+    max-width: (100% / 12) * $columns;
+}

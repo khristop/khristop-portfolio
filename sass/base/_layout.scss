@@ -39,6 +39,60 @@ h4, .heading-4 {
     font-weight: regular;
 }
 
+@include responsive(desktop) {
+    h1, .heading-1 {
+        font-size: 6rem; // 96px
+    }
+
+    h2, .heading-2 {
+        font-size: 4.5rem; // 72px
+    }
+
+    h3, .heading-3 {
+        font-size: 3rem; // 48px
+    }
+
+    h4, .heading-4 {
+        font-size: 1.25rem; // 20px
+    }
+}
+@include responsive(tablet) {
+    h1, .heading-1 {
+        font-size: 3rem; // 80px
+    }
+
+    h2, .heading-2 {
+        font-size: 2.5rem; // 56px
+    }
+
+    h3, .heading-3 {
+        font-size: 1.5rem; // 40px
+    }
+
+    h4, .heading-4 {
+        font-size: 1rem; // 18px
+    }
+}
+
+@include responsive(phone) {
+    h1, .heading-1 {
+        font-size: 4rem; // 64px
+    }
+
+    h2, .heading-2 {
+        font-size: 3rem; // 48px
+    }
+
+    h3, .heading-3 {
+        font-size: 2rem; // 32px
+    }
+
+    h4, .heading-4 {
+        font-size: 1rem; // 16px
+    }
+}
+
+
 .text-white {
     color: #FCFCFC;
 }
@@ -74,6 +128,12 @@ p, .body-1 {
     &.sticky {
         position: sticky;
         top: 64px;
+    }
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
     }
 }
 
@@ -166,7 +226,56 @@ p, .body-1 {
 
 .content {
     min-height: calc(100vh - 120px - 64px - 80px);
-    padding-right: 112px;
     padding-bottom: 80px;
     height: 100%;
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+    content: ' ';
+
+    &__large {
+        height: 48px;
+        width: 48px;
+    }
+    &__close {
+        background: url('/img/close.svg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.sub-title {
+    font-size: 1.5rem; // 24px
+    font-weight: bold;
+    color: $dark-blue-colour;
+    margin-bottom: 32px;
+}
+
+
+// Grid layout
+.row { @include grid; }
+.col-1 { @include col(1); }
+.col-2 { @include col(2); }
+.col-3 { @include col(3); }
+.col-4 { @include col(4); }
+.col-5 { @include col(5); }
+.col-6 { @include col(6); }
+.col-7 { @include col(7); }
+.col-8 { @include col(8); }
+.col-9 { @include col(9); }
+.col-10 { @include col(10); }
+.col-11 { @include col(11); }
+.col-12 { @include col(12); }
+
+.align-center {
+    align-items: center;
+}
+
+.d-flex {
+    display: flex;
+}
+.justify-center {
+    justify-content: center;
 }

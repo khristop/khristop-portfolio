@@ -1,0 +1,30 @@
+@mixin grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@mixin col($columns) {
+    flex: 0 0 (100% / 12) * $columns;
+    max-width: (100% / 12) * $columns;
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 600px) {
+            @content;
+        }
+    } @else if $breakpoint == tablet {
+        @media (max-width: 900px) {
+            @content;
+        }
+    } @else if $breakpoint == desktop {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    } @else if $breakpoint == big-desktop {
+        @media (max-width: 1800px) {
+            @content;
+        }
+    }
+}

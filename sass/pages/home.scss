@@ -18,10 +18,21 @@ aside {
     position: fixed;
     right: 64px;
 }
+
+.scroll-menu-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .scroll-menu {
     display: flex;
     flex-direction: column;
     gap: 60px;
+    position: fixed;
+    margin-left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc((100vw - 1312px) / 2 );
 
     &__item {
         content: '';
@@ -53,15 +64,24 @@ aside {
     }
 }
 
+#fullpage > * {
+    padding-top: 250px;
+    padding-bottom: 80px;
+    justify-content: start;
+}
+
 
 #home {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 16px;
+    justify-content: start;
+    .fp-overflow {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
     h2 {
         align-self: flex-end;
         text-align: right;
+        margin-top: 32px;
     }
 
     figure {
@@ -76,22 +96,40 @@ aside {
             object-position: center 33%;
         }
     }
+
+    @include responsive(phone) {
+        figure {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    @include responsive(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 32px;
+        figure {
+            width: 300px;
+            height: 300px;
+        }
+    }
 }
 
 #links {
-    padding-top: 184px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 16px;
+    .fp-overflow {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+        overflow: visible;
+    }
 
     .subtitle-wrapper {
-        align-self: center;
+        display: flex;
+        justify-content: center;
         * {
             max-width: 600px;
         }
     }
-
 
     .links {
         display: flex;
@@ -132,16 +170,19 @@ aside {
 }
 
 #contact {
-    padding-top: 184px;
-    padding-bottom: 0px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     gap: 16px;
+    height: 100%;
+
+    .fp-overflow {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
 
     .contact {
-        margin-top: 64px;
+        margin-top: 80px;
         display: flex;
         justify-content: center;
         gap: 80px;
