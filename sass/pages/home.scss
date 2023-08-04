@@ -14,6 +14,19 @@
     background-color: #FCFCFC;
 }
 
+.main-header-wrapper {
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 1350px) {
+        .logo {
+            padding-left: 32px;
+        }
+        .header__content {
+            padding-right: 32px;
+        }
+    }
+}
+
 aside {
     position: fixed;
     right: 64px;
@@ -68,6 +81,17 @@ aside {
     padding-top: 250px;
     padding-bottom: 80px;
     justify-content: start;
+
+    @include responsive(tablet) {
+        padding-top: 220px;
+    }
+
+    @include responsive(phone) {
+        padding-top: 200px;
+    }
+    @include responsive(sphone) {
+        padding-top: 180px;
+    }
 }
 
 
@@ -77,11 +101,14 @@ aside {
         display: flex;
         flex-direction: column;
         gap: 64px;
+        width: 100%;
     }
     h2 {
         align-self: flex-end;
         text-align: right;
         margin-top: 32px;
+        margin-right: 80px;
+        max-width: 930px;
     }
 
     figure {
@@ -97,10 +124,9 @@ aside {
         }
     }
 
-    @include responsive(phone) {
-        figure {
-            width: 300px;
-            height: 300px;
+    @include responsive(desktop) {
+        .fp-overflow {
+            gap: 64px;
         }
     }
 
@@ -109,8 +135,24 @@ aside {
         justify-content: space-between;
         gap: 32px;
         figure {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    @include responsive(phone) {
+        .fp-overflow {
+            align-items: center;
+            gap: 32px;
+        }
+        figure {
+            width: 150px;
+            height: 150px;
+        }
+
+        h4, h2 {
+            text-align: center;
+            margin-right: 0;
         }
     }
 }
@@ -196,6 +238,29 @@ aside {
         padding-bottom: 16px;
         display: flex;
         gap: 8px
+    }
+
+    @include responsive(desktop) {
+
+    }
+
+    @include responsive(tablet) {
+        .form-control {
+            display: flex;
+            flex-direction: column;
+            .input-field {
+                width: auto;
+            }
+        }
+    }
+
+    @include responsive(phone) {
+        .contact {
+            margin-top: 0;
+            flex-direction: column;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
     }
 }
 

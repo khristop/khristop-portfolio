@@ -10,7 +10,11 @@
 }
 
 @mixin responsive($breakpoint) {
-    @if $breakpoint == phone {
+    @if $breakpoint == sphone {
+        @media (max-width: 400px) {
+            @content;
+        }
+    } @else if $breakpoint == phone {
         @media (max-width: 600px) {
             @content;
         }

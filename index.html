@@ -12,15 +12,21 @@
     <link rel="stylesheet" href="/styles/home.css">
 </head>
 <body class="home">
+    <!-- when small show a burger menu -->
     <nav class="diagonal-nav">
-        <ul>
+        <div class="burger-menu">
+            <span class="burger-menu__line"></span>
+            <span class="burger-menu__line"></span>
+            <span class="burger-menu__line"></span>
+        </div>
+        <ul class="links">
             <li><a class="dark-blue-bg" href="/">Home</a></li>
             <li><a class="green-bg" href="/about.html">About me</a></li>
             <li><a class="orange-bg" href="/projects.html">Work</a></li>
             <li><a class="dark-blue-bg" href="/index.html#contact">Contact</a></li>
         </ul>
     </nav>
-    <div class="container">
+    <div class="main-header-wrapper">
         <header class="main-header fixed container" id="intro">
             <img src="/img/logo.svg" loading="lazy" alt="Kevin Garcia Logo" class="logo" height="120">
             <div class="header__content">
@@ -28,27 +34,14 @@
             </div>
         </header>
     </div>
-<!-- 
-    <aside class="container scroll-menu-wrapper">
-        <ul class="scroll-menu">
-            <li class="scroll-menu__item">
-                <a href="#top"></a>
-            </li>
-            <li class="scroll-menu__item">
-                <a href="#links"></a>
-            </li>
-            <li class="scroll-menu__item">
-                <a href="#contact"></a>
-            </li>
-        </ul>
-    </aside> -->
+
     <main class="container" id="fullpage">
         <section id="home" class="content section active">
             <h1>Kevin Garcia</h1>
             <figure>
                 <img src="/img/me.jpg" alt="Kevin Garcia" height="200">
             </figure>
-            <h2>UI/UX DESIGNER AND <br>
+            <h2>UI/UX DESIGNER AND 
                 FRONT END DEVELOPER</h2>
         </section>
 
@@ -71,7 +64,7 @@
             </div>
         </section>
 
-        <section id="contact" class="content section">
+        <section id="contact" class="content section fp-auto-height">
             <div class="contact">
                 <h1 class="contact__title">Let's get in touch</h1>
                 <form class="contact__form" action="">
@@ -108,109 +101,11 @@
             </a>
         </div>
     </footer>
-
-    <script>
-    // let previousY = 0;
-    // // Function to scroll to the next or previous section based on scroll direction
-    // const handleScroll = (event) => {
-    //     const deltaY = event.deltaY;
-    //     const currentY = event.pageY;
-
-    //     if (deltaY > 0 && currentY > previousY) {
-    //         event.preventDefault();
-    //         const currentSection = document.querySelector(".active-section");
-    //         const nextSection = currentSection.nextElementSibling;
-
-    //         if (nextSection) {
-    //         nextSection.scrollIntoView({ behavior: "smooth" });
-    //         }
-    //     } else if (deltaY < 0 && currentY < previousY) {
-    //         event.preventDefault();
-    //         const currentSection = document.querySelector(".active-section");
-    //         const prevSection = currentSection.previousElementSibling;
-
-    //         if (prevSection) {
-    //         prevSection.scrollIntoView({ behavior: "smooth" });
-    //         }
-    //     }
-    //     previousY = currentY;
-    // };
-
-    // // Add an event listener to the document to capture scroll events
-    // document.addEventListener("wheel", handleScroll, { passive: false });
-
-    // // Optional: Add a class to the active section for highlighting
-    // const sections = document.querySelectorAll(".section");
-    // sections.forEach(section => {
-    //   section.addEventListener("mouseenter", () => {
-    //     section.classList.add("active-section");
-    //   });
-
-    //   section.addEventListener("mouseleave", () => {
-    //     section.classList.remove("active-section");
-    //   });
-    // });
-        // Set the active state in the scroll-menu
-        // const scrollMenuItems = document.querySelectorAll('.scroll-menu__item');
-        // const sections = document.querySelectorAll('.section');
-
-        // const observer = new IntersectionObserver(entries => {
-
-        //     // update the active state in the scroll-menu with the closest section
-        //     entries.forEach(entry => {
-        //         const id = entry.target.getAttribute('id');
-        //         console.log(id);
-        //         const scrollMenuItem = document.querySelector(`.scroll-menu__item a[href="/#${id}"]`);
-        //         if (entry.intersectionRatio > 0) {
-        //             scrollMenuItem.classList.add('active');
-        //         } else {
-        //             scrollMenuItem.classList.remove('active');
-        //         }
-        //     });
-        // });
-
-        // sections.forEach(section => {
-        //     observer.observe(section);
-        // });
-
-        // // Set the active state in the diagonal-nav
-        // const navItems = document.querySelectorAll('.diagonal-nav a');
-        // const sections2 = document.querySelectorAll('.section');
-
-        // const observer2 = new IntersectionObserver(entries => {
-        //     entries.forEach(entry => {
-        //         const id = entry.target.getAttribute('id');
-        //         const navItem = document.querySelector(`.diagonal-nav a[href="/index.html#${id}"]`);
-        //         if (entry.intersectionRatio > 0) {
-        //             navItem.classList.add('active');
-        //         } else {
-        //             navItem.classList.remove('active');
-        //         }
-        //     });
-        // });
-
-        // sections2.forEach(section => {
-        //     observer2.observe(section);
-        // });
-
-        // // Set the active state in the filters
-        // const filters = document.querySelectorAll('.filter');
-
-        // filters.forEach(filter => {
-        //     filter.addEventListener('click', function() {
-        //         filters.forEach(filter => filter.classList.remove('active'));
-        //         this.classList.add('active');
-        //     });
-        // });
-
-   
-    </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/vendors/easings.min.js" integrity="sha512-SrKslwu6IjHEo/8mAOtkoUOT3MzHCEOFWktrC8BNtjPuBBYLYjg1y/Marat34uYfOfxDMLEwy8DLArWEVc2i+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js" integrity="sha512-LGiXf+jHGTHcIybSsOWO3I/in+OObCkcEsWIZ7IyhzfD6RzD5qDUw2CK+JveuI7zTSEcDG//bIOvOpAJW2BWsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css" integrity="sha512-otONSJGv1l0LjJXcgyqi2MeKXtnthkiXAleeQjFJOKYcVD5u+mOuPb7xCnlsb74Ld+N0ONbP7KYRmW2/OWrvaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="/scripts/main.js"></script>
+    <script src="/js/main.js"></script>
     <script>
         new fullpage('#fullpage', {
             //options here

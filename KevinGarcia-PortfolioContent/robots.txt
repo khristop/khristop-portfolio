@@ -1,2 +1,0 @@
-# khristop.com/robots.txt
-User-agent: googlebot
