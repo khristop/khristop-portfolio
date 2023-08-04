@@ -9,8 +9,18 @@
     min-height: calc(100vh - 120px - 64px - 80px - 128px);
 }
 
+.header__content {
+    display: initial !important;
+    align-self: self-start !important;
+    margin-top: 20px;
+}
+
 .content {
     padding-right: 0;
+}
+
+.main-header {
+    justify-content: flex-start;  
 }
 
 .header__content {
@@ -68,6 +78,7 @@ p {
 
 .images-flex {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
@@ -76,8 +87,9 @@ p {
     align-items: center;
 }
 
-.app-icon {
+.app-icon > img {
     height: 120px;
+    width: 120px;
 }
 
 .app-logo > img {
@@ -121,4 +133,38 @@ p {
             }
         }
     }
+}
+
+
+@include responsive(tablet) {
+    .row {
+        flex-direction: column;
+        > * {
+            flex: 1;
+            max-width: 100%;
+        }
+    }
+}
+
+@include responsive(phone) {
+    .row {
+        flex-direction: column;
+        > * {
+            flex: 1;
+            max-width: 100%;
+        }
+    }
+
+    .images-flex, .images-grid {
+        justify-content: center;
+    }
+
+    .icon__large {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+img {
+    max-width: 100%;
 }
