@@ -37,13 +37,13 @@
         <section id="projects" class="content">
             <div class="filters">
                 <button class="filter active" data-filter="all">All</button>
-                <button class="filter" data-filter="design">Front End</button>
-                <button class="filter" data-filter="development">Design</button>
-                <button class="filter" data-filter="development">Other</button>
+                <button class="filter" data-filter="development">Front End</button>
+                <button class="filter" data-filter="design">Design</button>
+                <button class="filter" data-filter="other">Other</button>
             </div>
 
             <div class="project-list">
-                <a class="project" href="/projects/dailygo.html">
+                <a class="project" href="/projects/dailygo.html" data-type="design">
                     <figure class="project__logo">
                         <img src="/img/projects/dailygo/logo.svg" alt="DailyGo">
                     </figure>
@@ -93,5 +93,29 @@
     </footer>
 
     <script src="/js/main.js"></script>
+    <script>
+        // Create script for the filters buttons
+        const filters = document.querySelectorAll('.filter');
+        const projectList = document.querySelector('.project-list');
+
+        filters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                filters.forEach(filter => filter.classList.remove('active'));
+                this.classList.add('active');
+
+                const selectedFilter = this.getAttribute('data-filter');
+                projectList.querySelectorAll('.project').forEach(project => {
+                    const projectType = project.getAttribute('data-type');
+                    if ((selectedFilter === 'all') || (projectType === selectedFilter)) {
+                        project.classList.remove('hide');
+                        project.classList.add('show');
+                    } else {
+                        project.classList.remove('show');
+                        project.classList.add('hide');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

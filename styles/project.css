@@ -282,6 +282,12 @@ p, .body-1 {
   flex: 0 0 100%;
   max-width: 100%; }
 
+.margin-1 {
+  margin-bottom: 16px; }
+
+.margin-2 {
+  margin-bottom: 32px; }
+
 .align-center {
   align-items: center; }
 
@@ -339,6 +345,7 @@ p, .body-1 {
   nav.open {
     width: 100vw;
     height: 100vh;
+    animation: expand 0.4s ease-in-out forwards;
     top: 0px; }
     nav.open .burger-menu {
       transform: rotate(90deg); }
@@ -363,6 +370,7 @@ p, .body-1 {
       gap: 32px;
       transition: all 0.3s ease-in-out; }
       nav.open .links li {
+        animation: showLinks 0.6s ease-in forwards;
         width: 100%;
         text-align: center; } }
 
@@ -385,6 +393,35 @@ p, .body-1 {
     font-size: 1.5rem; }
   h4, .heading-4 {
     font-size: 1rem; } }
+
+@keyframes expand {
+  0% {
+    width: 40px;
+    height: 40px;
+    top: 80px;
+    right: 32px; }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    right: 0px; } }
+
+@keyframes showLinks {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  25% {
+    opacity: 0;
+    transform: translateY(20px); }
+  50% {
+    opacity: 0;
+    transform: translateY(20px); }
+  75% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
 
 .icon {
   content: ' ';
@@ -421,6 +458,10 @@ p, .body-1 {
 p {
   line-height: 1.5; }
 
+.project-logo {
+  max-height: 64px;
+  margin-bottom: 32px; }
+
 .page_title {
   margin-top: 16px;
   margin-left: 32px;
@@ -437,12 +478,62 @@ p {
 .images-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 32px; }
   .images-grid img {
-    max-width: 400px;
+    max-width: 192px;
     height: 100%;
     width: 100%;
     object-fit: contain;
     border-radius: 16px;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.25); }
+
+.custom-link {
+  font-size: 1.5rem; }
+
+.responsive-image {
+  width: 100%; }
+
+.images-flex {
+  display: flex;
+  gap: 16px; }
+
+.f-col {
+  flex-direction: column;
+  align-items: center; }
+
+.app-icon {
+  height: 120px; }
+
+.app-logo > img {
+  height: 120px; }
+
+.f-align-top {
+  align-items: flex-start; }
+
+.palette {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap; }
+  .palette .color-palette-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+    border-radius: 16px;
+    background-color: white;
+    width: 200px;
+    height: 100px; }
+    .palette .color-palette-item .color-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%; }
+      .palette .color-palette-item .color-group span {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px; }

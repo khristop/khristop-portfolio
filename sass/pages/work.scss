@@ -67,7 +67,8 @@
 
         &__logo {
             height: 120px;
-            width: 120px;
+            max-width: 200px;
+            flex-shrink: 0;
 
             img {
                 height: 100%;
@@ -99,7 +100,31 @@
             }
         }
     }
+
+    @include responsive(tablet) {
+        .project {
+            &__logo {
+                max-width: 150px;
+            }
+        }
+    }
+
+    @include responsive(phone) {
+        .project {
+            flex-direction: column;
+            &__logo {
+                display: none;
+            }
+        }
+    }
 }
+
+
+.hide {
+    display: none !important;
+}
+
+
 
 
 // animation that expand and contract infinitely the triangular pseudo element on the bottom right corner of the .project element 

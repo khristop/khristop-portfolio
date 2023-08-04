@@ -78,19 +78,19 @@ aside {
 }
 
 #fullpage > * {
-    padding-top: 250px;
+    margin-top: 250px;
     padding-bottom: 80px;
     justify-content: start;
 
     @include responsive(tablet) {
-        padding-top: 220px;
+        margin-top: 220px;
     }
 
     @include responsive(phone) {
-        padding-top: 200px;
+        margin-top: 200px;
     }
     @include responsive(sphone) {
-        padding-top: 180px;
+        margin-top: 180px;
     }
 }
 
@@ -212,7 +212,6 @@ aside {
 }
 
 #contact {
-
     gap: 16px;
     height: 100%;
 

@@ -282,6 +282,12 @@ p, .body-1 {
   flex: 0 0 100%;
   max-width: 100%; }
 
+.margin-1 {
+  margin-bottom: 16px; }
+
+.margin-2 {
+  margin-bottom: 32px; }
+
 .align-center {
   align-items: center; }
 
@@ -339,6 +345,7 @@ p, .body-1 {
   nav.open {
     width: 100vw;
     height: 100vh;
+    animation: expand 0.4s ease-in-out forwards;
     top: 0px; }
     nav.open .burger-menu {
       transform: rotate(90deg); }
@@ -363,6 +370,7 @@ p, .body-1 {
       gap: 32px;
       transition: all 0.3s ease-in-out; }
       nav.open .links li {
+        animation: showLinks 0.6s ease-in forwards;
         width: 100%;
         text-align: center; } }
 
@@ -385,6 +393,35 @@ p, .body-1 {
     font-size: 1.5rem; }
   h4, .heading-4, .button {
     font-size: 1rem; } }
+
+@keyframes expand {
+  0% {
+    width: 40px;
+    height: 40px;
+    top: 80px;
+    right: 32px; }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    right: 0px; } }
+
+@keyframes showLinks {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  25% {
+    opacity: 0;
+    transform: translateY(20px); }
+  50% {
+    opacity: 0;
+    transform: translateY(20px); }
+  75% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
 
 .icon {
   content: ' ';
@@ -466,18 +503,18 @@ aside {
       z-index: -1; }
 
 #fullpage > * {
-  padding-top: 250px;
+  margin-top: 250px;
   padding-bottom: 80px;
   justify-content: start; }
   @media (max-width: 900px) {
     #fullpage > * {
-      padding-top: 220px; } }
+      margin-top: 220px; } }
   @media (max-width: 600px) {
     #fullpage > * {
-      padding-top: 200px; } }
+      margin-top: 200px; } }
   @media (max-width: 400px) {
     #fullpage > * {
-      padding-top: 180px; } }
+      margin-top: 180px; } }
 
 #home {
   justify-content: start; }
