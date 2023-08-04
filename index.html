@@ -113,6 +113,24 @@
             scrollHorizontally: true,
             scrollOverflow: true
         });
+
+        const projectLinks = document.querySelectorAll('.project-link');
+        projectLinks.forEach(projectLink => {
+            projectLink.addEventListener('click', () => {
+                window.location.href = '/projects.html';
+            })
+        });
+
+        // script for sending an email from the form
+        const form = document.querySelector('.contact__form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.querySelector('#email').value;
+            const subject = document.querySelector('#subject').value;
+            window.open(`mailto:kevinchristogm@gmail.com?subject=${subject}&body=${email}`);
+            const formActions = document.querySelector('.form-actions');
+            formActions.innerHTML = '<p class="form-message">Thanks for contacting me!</p>';
+        });
     </script>
 </body>
 </html>
