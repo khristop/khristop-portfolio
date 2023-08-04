@@ -215,7 +215,7 @@ p, .body-1 {
   height: 24px;
   width: 24px;
   content: ' '; }
-  .icon__large, .icon-linkedin, .icon-github {
+  .icon__large, .icon-linkedin, .icon-github, .icon-gmail {
     height: 48px;
     width: 48px; }
   .icon__close {
@@ -389,7 +389,7 @@ p, .body-1 {
 .icon {
   content: ' ';
   display: inline-block; }
-  .icon__large, .icon-linkedin, .icon-github {
+  .icon__large, .icon-linkedin, .icon-github, .icon-gmail {
     width: 48px;
     height: 48px;
     color: inherit; }
@@ -399,6 +399,9 @@ p, .body-1 {
   .icon-github {
     -webkit-mask-image: url("/img/github.svg");
     mask-image: url("/img/github.svg"); }
+  .icon-gmail {
+    background-image: url("/img/gmail.svg");
+    border-radius: 50%; }
 
 .home::before {
   position: absolute;

@@ -18,4 +18,9 @@
         -webkit-mask-image: url('/img/github.svg');
         mask-image: url('/img/github.svg');
     }
+    &-gmail {
+        @extend .icon__large;
+        background-image: url('/img/gmail.svg');
+        border-radius: 50%;
+    }
 }
