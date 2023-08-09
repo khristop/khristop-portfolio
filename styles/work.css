@@ -126,6 +126,9 @@ p, .body-1 {
     align-items: center;
     height: 100%;
     gap: 32px; }
+    @media (max-width: 600px) {
+      .footer__content {
+        justify-content: center; } }
   .footer__link {
     font-size: 24px;
     color: #3d405b;

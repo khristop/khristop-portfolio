@@ -30,7 +30,6 @@
         <header class="main-header fixed container" id="intro">
             <img src="/img/logo.svg" loading="lazy" alt="Kevin Garcia Logo" class="logo" height="120">
             <div class="header__content">
-                <h4>Home</h4>
             </div>
         </header>
     </div>
@@ -69,12 +68,16 @@
                 <h1 class="contact__title">Let's get in touch</h1>
                 <form class="contact__form" action="">
                     <div class="form-control">
-                        <label for="email" class="input-label">Email</label>
-                        <input type="email" id="email" name="email" class="input-field" placeholder="email">
+                        <label for="name" class="input-label">Name</label>
+                        <input type="name" id="name" name="name" class="input-field" placeholder="Type your name">
                     </div>
                     <div class="form-control">
-                        <label for="subject" class="input-label">Subject</label>
-                        <textarea id="subject" name="subject" class="input-field" rows="5" placeholder="Subject or question"></textarea>
+                        <label for="email" class="input-label">Email</label>
+                        <input type="email" id="email" name="email" class="input-field" placeholder="Type your email">
+                    </div>
+                    <div class="form-control">
+                        <label for="subject" class="input-label">Message</label>
+                        <textarea id="subject" name="subject" class="input-field" rows="5" placeholder="Type the message"></textarea>
                     </div>
                     <div class="form-actions">
                         <button type="submit" class="button button-primary">Submit</button>
@@ -126,10 +129,24 @@
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = document.querySelector('#email').value;
+            const name = document.querySelector('#name').value;
             const subject = document.querySelector('#subject').value;
-            window.open(`mailto:kevinchristogm@gmail.com?subject=${subject}&body=${email}`);
+            window.open(`mailto:kevinchristogm@gmail.com?subject=${subject}&body=${email} - ${name} - ${subject}`);
             const formActions = document.querySelector('.form-actions');
-            formActions.innerHTML = '<p class="form-message">Thanks for contacting me!</p>';
+
+            // send another message button
+            const button = document.createElement('button');
+            button.classList.add('button', 'button-primary');
+            button.innerText = 'Send another message';
+            button.addEventListener('click', () => {
+                formActions.innerHTML = `
+                    <button type="submit" class="button button-primary">Submit</button>
+                `;
+            });
+            formActions.innerHTML = '<p class="form-message">Thanks for contacting me!</p> <br>';
+            formActions.appendChild(button);
+            // reset form
+            form.reset();
         });
     </script>
 </body>

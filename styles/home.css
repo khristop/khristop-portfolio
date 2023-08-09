@@ -126,6 +126,9 @@ p, .body-1 {
     align-items: center;
     height: 100%;
     gap: 32px; }
+    @media (max-width: 600px) {
+      .footer__content {
+        justify-content: center; } }
   .footer__link {
     font-size: 24px;
     color: #3d405b;
@@ -502,27 +505,30 @@ aside {
       transform: translate(-50%, -50%);
       z-index: -1; }
 
-#fullpage > * {
-  margin-top: 250px;
+#home, #links, #contact > .fp-overflow {
+  padding-top: 250px;
   padding-bottom: 80px;
   justify-content: start; }
   @media (max-width: 900px) {
-    #fullpage > * {
-      margin-top: 220px; } }
+    #home, #links, #contact > .fp-overflow {
+      padding-top: 220px; } }
   @media (max-width: 600px) {
-    #fullpage > * {
-      margin-top: 200px; } }
+    #home, #links, #contact > .fp-overflow {
+      padding-top: 200px; } }
   @media (max-width: 400px) {
-    #fullpage > * {
-      margin-top: 180px; } }
+    #home, #links, #contact > .fp-overflow {
+      padding-top: 180px; } }
 
 #home {
   justify-content: start; }
   #home .fp-overflow {
     display: flex;
     flex-direction: column;
-    gap: 64px;
-    width: 100%; }
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    padding-bottom: 50px; }
   #home h2 {
     align-self: flex-end;
     text-align: right;
@@ -539,7 +545,15 @@ aside {
       height: inherit;
       width: inherit;
       object-position: center 33%; }
+  @media (max-width: 1800px) {
+    #home h2 {
+      margin-right: 0; } }
+  @media (max-width: 1600px) {
+    #home h2 {
+      margin-right: 120px; } }
   @media (max-width: 1200px) {
+    #home h2 {
+      margin-right: 170px; }
     #home .fp-overflow {
       gap: 64px; } }
   @media (max-width: 900px) {
@@ -547,6 +561,8 @@ aside {
       flex-direction: row;
       justify-content: space-between;
       gap: 32px; }
+      #home h2 {
+        margin-right: 0px; }
       #home figure {
         width: 200px;
         height: 200px; } }
@@ -564,7 +580,9 @@ aside {
 #links .fp-overflow {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 16px;
+  height: 100%;
+  justify-content: space-evenly;
   overflow: visible; }
 
 #links .subtitle-wrapper {
@@ -578,6 +596,12 @@ aside {
   justify-content: center;
   width: 100%;
   gap: 48px; }
+  @media (max-width: 600px) {
+    #links .links {
+      gap: 32px; } }
+  @media (max-width: 400px) {
+    #links .links {
+      gap: 8px; } }
 
 #links .project-link {
   width: 180px;
@@ -595,21 +619,40 @@ aside {
     transform: scale(1.05); }
   #links .project-link__image {
     margin-top: 20px;
-    height: 100px; }
+    max-height: 100px; }
   #links .project-link__title {
     margin-top: auto;
     flex-grow: 0; }
+  @media (max-width: 900px) {
+    #links .project-link {
+      width: 160px;
+      height: 180px; } }
+  @media (max-width: 600px) {
+    #links .project-link {
+      width: 150px;
+      height: 160px; }
+      #links .project-link__image {
+        max-width: 80%;
+        margin-top: 0px; }
+      #links .project-link__title {
+        font-size: 0.8rem; } }
+  @media (max-width: 400px) {
+    #links .project-link {
+      min-width: 100px;
+      height: 120px; }
+      #links .project-link__image {
+        max-width: 100%;
+        margin-top: 0px; } }
 
 #contact {
   gap: 16px;
-  height: 100%; }
+  padding-top: 0;
+  padding-bottom: 0; }
   #contact .fp-overflow {
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; }
+    flex-direction: column; }
   #contact .contact {
-    margin-top: 80px;
     display: flex;
     justify-content: center;
     gap: 80px; }
@@ -655,7 +698,9 @@ aside {
 
 .form-actions {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
 
 .button {
   padding: 16px 24px; }
