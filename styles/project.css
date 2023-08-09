@@ -486,6 +486,9 @@ p {
 .mt-1 {
   margin-top: 16px; }
 
+.mt-2 {
+  margin-top: 32px; }
+
 .images-grid {
   display: flex;
   flex-wrap: wrap;
@@ -523,10 +526,15 @@ p {
 .f-align-top {
   align-items: flex-start; }
 
+.f-align-center {
+  align-items: center; }
+
+.f-align-base {
+  align-items: baseline; }
+
 .palette {
   display: flex;
   gap: 16px;
-  margin-top: 32px;
   flex-wrap: wrap; }
   .palette .color-palette-item {
     display: flex;
@@ -534,7 +542,6 @@ p {
     gap: 8px;
     align-items: center;
     justify-content: center;
-    padding: 16px 0;
     border-radius: 16px;
     background-color: white;
     width: 200px;
@@ -572,3 +579,47 @@ p {
 
 img {
   max-width: 100%; }
+
+figure.labeled-image {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px; }
+
+.list {
+  list-style-type: square;
+  margin-left: 32px; }
+  .list li {
+    margin-top: 8px; }
+
+.comparison-image {
+  display: flex;
+  gap: 64px;
+  margin-left: 32px;
+  position: relative; }
+  .comparison-image.mobile .before, .comparison-image.mobile .after {
+    width: 250px; }
+  .comparison-image .before, .comparison-image .after {
+    position: relative; }
+  .comparison-image .before::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #3d405b;
+    transform: translateY(-50%); }
+  .comparison-image .before::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -32px;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 20px solid white;
+    transform: translateY(-50%); }
