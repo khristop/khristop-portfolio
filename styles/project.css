@@ -510,7 +510,8 @@ p {
 .images-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px; }
+  gap: 16px;
+  width: 100%; }
   .images-flex > * {
     height: 100%; }
   .images-flex.two-cols > * {
