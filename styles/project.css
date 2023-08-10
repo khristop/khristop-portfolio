@@ -632,3 +632,6 @@ figure.labeled-image {
     border-bottom: 40px solid transparent;
     border-left: 20px solid white;
     transform: translateY(-50%); }
+
+.logo-showcase {
+  height: 200px; }
