@@ -511,6 +511,11 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 16px; }
+  .images-flex > * {
+    height: 100%; }
+  .images-flex.two-cols > * {
+    max-width: calc((100% - 16px) / 2);
+    /* flex: 1 1 50%; */ }
 
 .f-col {
   flex-direction: column;
